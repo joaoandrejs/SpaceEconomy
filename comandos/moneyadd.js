@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
   }
 
   let member = message.mentions.users.first() || message.author; // Se não mencionar nenhum usuario mostrara o saldo do autor.
-  let saldo = db.get(`money_${member.id}`);
+  let saldo = db.get(`dinheiro_${member.id}`);
 
   let quantia = args[0]; // para facilitarmos e não ficar usando args[0]
   
@@ -16,10 +16,10 @@ exports.run = async (client, message, args) => {
   if (isNaN(quantia)) return message.channel.send(`Você não definiu uma quantia.`);  // Se o usuario não colocar um numero ele tornará esta mensagem
   
   message.channel.send(`${message.author.username} Foram adicionados **${quantia}** na conta do membro: ${member.username}!`);
-  db.subtract(`dinheiro_${member.id}`, args[0]); // Removendo na DB a quantia solicitada.
+  db.add(`dinheiro_${member.id}`, args[0]); // Removendo na DB a quantia solicitada.
 };
 
 exports.help = { //exportanto para a handler
   name: "moneyadd",
-  aliases: ["dinheiroadd", "adicionardinheiro"]
+  aliases: ["dinheiroadd", "adicionardinheiro", "addmoney"]
 };
