@@ -16,11 +16,11 @@ exports.run = async (client, message, args) => {
   if (isNaN(quantia)) return message.channel.send(`Você não definiu uma quantia.`);  // Se o usuario não colocar um numero ele tornará esta mensagem
   if (!quantia) return message.channel.send(`Digite uma quantia para ser adicionada!`); // Se não escrever nada ele irá responder esta mensagem
   
-  message.channel.send(`${message.author.username} Foram adicionados **${quantia}** na conta do membro: ${member.username}!`);
-  db.add(`dinheiro_${member.id}`, args[0]); // Adicionando na DB a quantia solicitada.
+  message.channel.send(`${message.author.username} Foram removidos **${quantia}** na conta do membro: ${member.username}!`);
+  db.subtract(`dinheiro_${member.id}`, args[0]); // Adicionando na DB a quantia solicitada.
 };
 
 exports.help = { //exportanto para a handler
-  name: "moneiadd",
-  aliases: ["dinheiroadd", "adicionardinheiro"]
+  name: "removemoney",
+  aliases: ["dinheiroremove", "removerdinheiro"]
 };
