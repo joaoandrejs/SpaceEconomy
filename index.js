@@ -73,4 +73,4 @@ setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000); // Código que deixa o Bot Online
 
-client.login(process.env.TOKEN);
+client.login(config.token);
