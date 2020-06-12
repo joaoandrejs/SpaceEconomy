@@ -20,6 +20,6 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = { //exportanto para a handler
-  name: "moneiadd",
+  name: "moneyadd",
   aliases: ["dinheiroadd", "adicionardinheiro"]
 };
