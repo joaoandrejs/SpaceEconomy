@@ -18,9 +18,9 @@ let miner = ['Ouro', 'Diamante', 'Aluminio', 'Rubi', 'Safira', 'Esmeralda', 'Ame
       message.channel.send(`Você ja trabalhou recentemente.\nVocê podera trabalhar novamente em: **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
    
      } else {
-        let emprego = await db.get(`trabaio_${message.author.id}`) // Puxando o 'trabaio', que utilizamos como emprego
-        if (emprego === null) { // Caso o 'trabaio' do usuário seja 'null', ou seja, zero, iremos avisar que ele precisa de um emprego
-          return message.reply(`Para poder trabalhar você deve possuir um emprego: \`SL!empregos\`.`)
+        let emprego = await db.get(`emprego_${message.author.id}`) // Puxando o 'emprego', que utilizamos como emprego
+        if (emprego === null) { // Caso o 'emprego' do usuário seja 'null', ou seja, zero, iremos avisar que ele precisa de um emprego
+          return message.reply(`Para poder trabalhar você deve possuir um emprego: \`SE!empregos\`.`)
         } else {
           
         } // Caso o usuário seja um Programador, que definimos como Um (1)
